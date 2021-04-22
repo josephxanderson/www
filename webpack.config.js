@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-const { InjectManifest } = require('workbox-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 
 const nodeEnv = (process.env.NODE_ENV !== 'production') ? 'development' : 'production';
@@ -10,12 +9,12 @@ module.exports = function(_env, argv) {
 
 	return {
 		entry: [
-			'./resources/js/pta.js',
+			'./resources/js/jxa.tsx',
 		],
 
 		output: {
 			chunkFilename: 'static/js/[chunkhash].js',
-			filename: 'static/js/pta.js',
+			filename: 'static/js/jxa.js',
 			path: path.resolve(__dirname, 'public'),
 			publicPath: '/',
 		},
@@ -24,21 +23,6 @@ module.exports = function(_env, argv) {
 			// Gives access to `process`.env.
 			new webpack.ProvidePlugin({
 				process: 'process/browser',
-			}),
-
-			// Google Workbox Manifest Injection into the service worker.
-			new InjectManifest({
-				compileSrc: true,
-				swDest: 'serviceWorker.js',
-				swSrc: './resources/js/serviceWorker.js',
-				maximumFileSizeToCacheInBytes: 5 * 1048576,
-				additionalManifestEntries: [
-					// Adds the root page to be precached.
-					{
-						url: '/',
-						revision: null,
-					},
-				],
 			}),
 
 			// Include other static assets in our build process.
@@ -60,12 +44,21 @@ module.exports = function(_env, argv) {
 					use: [
 						{
 							loader: "babel-loader",
-							options: {
-								cacheDirectory: true,
-								cacheCompression: false,
-							}
-						}
-					]
+						},
+					],
+				},
+
+				{
+					test: /\.tsx?$/,
+					exclude: /node_modules/,
+					use: [
+						{
+							loader: 'babel-loader',
+						},
+						{
+							loader: 'ts-loader',
+						},
+					],
 				},
 
 				// CSS / SASS / SCSS files
@@ -91,9 +84,9 @@ module.exports = function(_env, argv) {
 									plugins: [
 										[
 											require('autoprefixer'),
-										]
-									]
-								}
+										],
+									],
+								},
 							},
 						},
 
