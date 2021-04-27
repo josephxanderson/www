@@ -1,3 +1,5 @@
+@use '../variables';
+
 // Variables
 :root {
 	--component-globalnavigation-height: 0rem; // for JS
@@ -14,7 +16,9 @@ nav.GlobalNavigation {
 		position: relative;
 		display: flex;
 
-		flex-direction: column;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
 
 		width: 100%;
 		height: auto;
@@ -23,10 +27,52 @@ nav.GlobalNavigation {
 
 		margin: 0 auto;
 
-		padding-top: 0;
+		padding-top: var(--global-spacing-md);
 		padding-right: var(--global-spacing-md);
-		padding-bottom: 0;
+		padding-bottom: var(--global-spacing-md);
 		padding-left: var(--global-spacing-md);
+	}
+
+	.GlobalNavigation-Title {
+		margin-bottom: 0;
+
+		cursor: pointer;
+	}
+
+	ul.GlobalNavigation-List {
+		position: relative;
+		display: flex;
+
+		flex-direction: row;
+		align-items: center;
+		justify-content: normal;
+
+		list-style: none;
+
+		@media (max-width: variables.$global-breakpoint-md) {
+			display: none;
+		} // @media
+
+		li.GlobalNavigation-List-Item {
+
+			padding-top: 0;
+			padding-right: var(--global-spacing-xs);
+			padding-bottom: 0;
+			padding-left: var(--global-spacing-xs);
+		}
+	
+	}
+
+	.GlobalNavigation-CommandButton {
+		display: none;
+
+		margin-bottom: 0;
+
+		cursor: pointer;
+
+		@media (max-width: variables.$global-breakpoint-md) {
+			display: block;
+		} // @media
 	}
 
 }
