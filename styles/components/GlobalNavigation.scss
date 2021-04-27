@@ -28,9 +28,22 @@ nav.GlobalNavigation {
 		    position: absolute;
 		    justify-self: flex-end;
 
-		    top: var(--global-spacing-md);
+		    top: var(--global-spacing-md);	
 		}
 
+	}
+
+	&:after {
+	    position: absolute;
+	    display: block;
+		content: "";
+
+	    bottom: 0;
+
+	    width: 100%;
+	    height: 0.10rem;
+
+	    background: transparent;
 	}
 
 	div.GlobalNavigation-Container {
@@ -49,9 +62,9 @@ nav.GlobalNavigation {
 		margin: 0 auto;
 
 		padding-top: var(--global-spacing-md);
-		padding-right: var(--global-spacing-md);
+		padding-right: var(--global-spacing-sm);
 		padding-bottom: var(--global-spacing-md);
-		padding-left: var(--global-spacing-md);
+		padding-left: var(--global-spacing-sm);
 	}
 
 	div.GlobalNavigation-Title {
@@ -62,7 +75,7 @@ nav.GlobalNavigation {
 		justify-content: center;
 
 		width: auto;
-		height: auto;
+		height: 2.6rem;
 
 		padding-top: var(--global-spacing-xs);
 		padding-left: var(--global-spacing-xs);
@@ -137,8 +150,30 @@ nav.GlobalNavigation {
 
 			border-radius: 0.25rem;
 
+		    background-clip: padding-box;
+		    border: 0.175rem solid transparent;
+
+			&:after {
+				content: '';
+				position: absolute;
+				z-index: -1;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				margin: -0.175rem;
+				border-radius: inherit;
+
+				background: transparent;
+			}
+
 			&:active {
 				background-color: var(--global-color-foreground-secondary);
+
+				&:after {
+					background: linear-gradient(to right,#fdde5c,#f8ab5e,#f56a62,#a176c8,#759beb,#65beb3,#70db96);
+				}
+
 			}
 
 			a {
@@ -170,6 +205,10 @@ nav.GlobalNavigation {
 
 				background-color: var(--global-color-background-selected);
 
+				&:after {
+					background: var(--global-color-background-selected);
+				}
+
 				&:first-of-type {
 					margin-top: 0;
 				} // :first-of-type
@@ -187,8 +226,8 @@ nav.GlobalNavigation {
 		align-items: center;
 		justify-content: center;
 
-		width: auto;
-		height: auto;
+		width: 2.6rem;
+		height: 2.6rem;
 
 		padding-top: var(--global-spacing-xs);
 		padding-left: var(--global-spacing-xs);
@@ -211,7 +250,12 @@ nav.GlobalNavigation {
 		} // @media
 
 		.GlobalNavigation-CommandButton-Content {
-			// ...
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			text-fill-color: transparent;
+
+			background-image: linear-gradient(to top right, #fdde5c,#f8ab5e,#f56a62,#a176c8,#759beb,#65beb3,#70db96);
+			
 		} // .GlobalNavigation-CommandButton-Content
 
 	} // div.GlobalNavigation-CommandButton

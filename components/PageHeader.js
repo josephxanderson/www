@@ -2,12 +2,12 @@ const PageHeader = ({ heading, subheading }) => {
 	return (
 		<header className="PageHeader">
 			{ heading
-				? <h1>{heading}</h1>
+				? <h1 className="PageHeader-Heading">{heading}</h1>
 				: ''
 			}
 
 			{ subheading
-				? <h3>{subheading}</h3>
+				? <h3 className="PageHeader-Subheading">{subheading}</h3>
 				: ''
 			}
 		</header>

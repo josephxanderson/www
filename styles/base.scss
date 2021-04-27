@@ -47,13 +47,25 @@ body {
 			margin: 0 auto;
 
 			padding-top: 0;
-			padding-right: var(--global-spacing-md);
+			padding-right: var(--global-spacing-sm);
 			padding-bottom: 0;
-			padding-left: var(--global-spacing-md);
+			padding-left: var(--global-spacing-sm);
 
 			// @media (max-width: variables.$global-breakpoint-md) {
 				
 			// } // @media
+
+			header.PageHeader {
+
+				.PageHeader-Heading {
+				    position: relative;
+				    display: block;
+				}
+
+				.PageHeader-Subheading {
+				}
+
+			}
 
 		} // main.PageContainer
 
