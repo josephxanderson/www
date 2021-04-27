@@ -1,0 +1,136 @@
+@font-face {
+	font-family: "Inter";
+	src: url("/fonts/Inter-ExtraLight.woff2");
+	font-style: thin;
+	font-weight: 100;
+	font-display: block; // Text will be invisible while the font is loading.
+}
+
+@font-face {
+	font-family: "Inter";
+	src: url("/fonts/Inter-Light.woff2");
+	font-style: light;
+	font-weight: 200;
+	font-display: block; // Text will be invisible while the font is loading.
+}
+
+@font-face {
+	font-family: "Inter";
+	src: url("/fonts/Inter-Regular.woff2");
+	font-style: regular;
+	font-weight: 300;
+	font-display: block; // Text will be invisible while the font is loading.
+}
+
+@font-face {
+	font-family: "Inter";
+	src: url("/fonts/Inter-Medium.woff2");
+	font-style: medium;
+	font-weight: 400;
+	font-display: block; // Text will be invisible while the font is loading.
+}
+
+@font-face {
+	font-family: "Inter";
+	src: url("/fonts/Inter-Bold.woff2");
+	font-style: bold;
+	font-weight: 500;
+	font-display: block; // Text will be invisible while the font is loading.
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--global-heading-font-family);
+	font-feature-settings: var(--global-text-features-basic);
+	font-style: normal;
+	font-smoothing: antialiased;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+h1 {
+	font-size: var(--global-text-size-xl);
+	font-weight: var(--global-heading-font-weight-bold);
+	letter-spacing: -0.1rem;
+	line-height: calc(var(--global-text-size-xl) * var(--global-text-vspace-multiplier));
+	margin-bottom: calc(var(--global-spacing-xl) / (var(--global-text-vspace-multiplier) * 4));
+}
+
+h2 {
+	font-size: var(--global-text-size-lg);
+	font-weight: var(--global-heading-font-weight-bold);
+	letter-spacing: -0.1rem;
+	line-height: calc(var(--global-text-size-lg) * var(--global-text-vspace-multiplier));
+	margin-bottom: calc(var(--global-spacing-lg) / (var(--global-text-vspace-multiplier) * 4));
+}
+
+h3 {
+	font-size: var(--global-text-size-lg);
+	font-weight: var(--global-heading-font-weight-medium);
+	line-height: calc(var(--global-text-size-lg) * var(--global-text-vspace-multiplier));
+	margin-bottom: calc(var(--global-spacing-lg) / (var(--global-text-vspace-multiplier) * 4));
+}
+
+h4 {
+	font-size: var(--global-text-size-md);
+	font-weight: var(--global-heading-font-weight-medium);
+	line-height: calc(var(--global-text-size-md) * var(--global-text-vspace-multiplier));
+	margin-bottom: calc(var(--global-spacing-md) / (var(--global-text-vspace-multiplier) * 4));
+}
+
+h5 {
+	font-size: var(--global-text-size-sm);
+	font-weight: var(--global-heading-font-weight-regular);
+	line-height: calc(var(--global-text-size-sm) * var(--global-text-vspace-multiplier));
+	margin-bottom: calc(var(--global-spacing-sm) / (var(--global-text-vspace-multiplier) * 4));
+}
+
+h6 {
+	font-size: var(--global-text-size-xs);
+	font-weight: var(--global-heading-font-weight-bold);
+	text-transform: uppercase;
+	line-height: calc(var(--global-text-size-xs) * var(--global-text-vspace-multiplier));
+	margin-bottom: calc(var(--global-spacing-xs) / (var(--global-text-vspace-multiplier) * 4));
+}
+
+span {
+	font-family: var(--global-body-font-family);
+	font-feature-settings: var(--global-text-features-basic);
+	font-style: normal;
+	font-smoothing: antialiased;
+}
+
+p {
+	font-family: var(--global-body-font-family);
+	font-feature-settings: var(--global-text-features-basic);
+	font-size: var(--global-text-size-md);
+	font-style: normal;
+	font-smoothing: antialiased;
+	font-weight: var(--global-body-font-weight-regular);
+	line-height: calc(var(--global-text-size-md) * var(--global-text-vspace-multiplier));
+	margin-bottom: calc(var(--global-spacing-md) / (var(--global-text-vspace-multiplier) * 4));
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+	a {
+		text-decoration: none;
+		color: var(--global-color-blue);
+	}
+}

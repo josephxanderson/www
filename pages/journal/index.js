@@ -3,7 +3,7 @@ import Layout from '../../layouts/Journal';
 
 const Index = () => {
 	return (
-		<Layout>
+		<Layout title="Joseph Anderson's Journal">
 			<h1>Hi!</h1>
 		</Layout>
 	);

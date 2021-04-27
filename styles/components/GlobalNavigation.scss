@@ -1,0 +1,12 @@
+// Variables
+:root {
+	--component-globalnavigation-height: 6.4rem;
+}
+
+nav.GlobalNavigation {
+	position: relative;
+	display: block;
+
+	width: 100%;
+	height: var(--component-globalnavigation-height);
+}

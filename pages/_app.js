@@ -1,5 +1,5 @@
 // Application imports
-import '../styles/global.scss';
+import '../styles/index.scss';
 
 const App = ({ Component, pageProps }) => {
 	return <Component {...pageProps} />;
