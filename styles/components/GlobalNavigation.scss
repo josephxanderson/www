@@ -69,7 +69,6 @@ nav.GlobalNavigation {
 		padding-bottom: var(--global-spacing-xs);
 		padding-right: var(--global-spacing-xs);
 
-		margin-top: var(--global-spacing-xs);
 		margin-bottom: 0;
 
 		background-color: transparent;
@@ -127,10 +126,20 @@ nav.GlobalNavigation {
 			width: auto;
 			height: auto;
 
-			padding-top: 0;
+			padding-top: var(--global-spacing-xs);
 			padding-right: var(--global-spacing-xs);
-			padding-bottom: 0;
+			padding-bottom: var(--global-spacing-xs);
 			padding-left: var(--global-spacing-xs);
+
+			margin-left: var(--global-spacing-xs);
+
+			background-color: transparent;
+
+			border-radius: 0.25rem;
+
+			&:active {
+				background-color: var(--global-color-foreground-secondary);
+			}
 
 			a {
 				position: absolute;
@@ -143,8 +152,8 @@ nav.GlobalNavigation {
 				height: 100%;
 			}
 
-			&:last-of-type {
-				padding-right: 0;
+			&:first-of-type {
+				margin-left: 0;
 			} // :last-of-type
 
 			@media (max-width: variables.$global-breakpoint-md) {
@@ -157,14 +166,9 @@ nav.GlobalNavigation {
 				padding-right: 0;
 
 				margin-top: var(--global-spacing-xs);
+				margin-left: 0;
 
 				background-color: var(--global-color-background-selected);
-
-				border-radius: 0.25rem;
-
-				&:active {
-					background-color: var(--global-color-foreground-secondary);
-				}
 
 				&:first-of-type {
 					margin-top: 0;
@@ -190,8 +194,6 @@ nav.GlobalNavigation {
 		padding-left: var(--global-spacing-xs);
 		padding-bottom: var(--global-spacing-xs);
 		padding-right: var(--global-spacing-xs);
-
-		margin-top: var(--global-spacing-xs);
 
 		background-color: transparent;
 
