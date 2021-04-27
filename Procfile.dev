@@ -1,0 +1,4 @@
+# Heroku Application Configuration File for Development Environments
+
+# Release phase & Main Web Dyno
+web: npm run dev
