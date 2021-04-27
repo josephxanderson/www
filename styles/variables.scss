@@ -15,6 +15,21 @@
 	--global-spacing-xxxxl:	calc(13.75 * var(--global-spacing-base));
 }
 
+// Breakpoint variables
+:root {
+	--global-breakpoint-xs: 360px;
+	--global-breakpoint-sm: 480px;
+	--global-breakpoint-md: 768px;
+	--global-breakpoint-lg: 1024px;
+	--global-breakpoint-xl: 1280px;
+}
+
+$global-breakpoint-xs: 360px;
+$global-breakpoint-sm: 480px;
+$global-breakpoint-md: 768px;
+$global-breakpoint-lg: 1024px;
+$global-breakpoint-xl: 1280px;
+
 // Color variables
 :root {
 }

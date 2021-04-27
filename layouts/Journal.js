@@ -5,7 +5,9 @@ const Journal = ({ children, title }) => {
 	return (<>
 		<Common title={title} />
 
-		{ children }
+		<main className="PageContainer">
+			{ children }
+		</main>
 	</>);
 }
 

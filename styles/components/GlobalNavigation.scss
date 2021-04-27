@@ -1,6 +1,6 @@
 // Variables
 :root {
-	--component-globalnavigation-height: 6.4rem;
+	--component-globalnavigation-height: 0rem; // for JS
 }
 
 nav.GlobalNavigation {
@@ -8,5 +8,25 @@ nav.GlobalNavigation {
 	display: block;
 
 	width: 100%;
-	height: var(--component-globalnavigation-height);
+	height: auto;
+
+	div.GlobalNavigation-Container {
+		position: relative;
+		display: flex;
+
+		flex-direction: column;
+
+		width: 100%;
+		height: auto;
+
+		max-width: var(--global-breakpoint-md);
+
+		margin: 0 auto;
+
+		padding-top: 0;
+		padding-right: var(--global-spacing-md);
+		padding-bottom: 0;
+		padding-left: var(--global-spacing-md);
+	}
+
 }
