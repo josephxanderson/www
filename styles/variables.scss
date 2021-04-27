@@ -19,19 +19,38 @@
 :root {
 	--global-breakpoint-xs: 360px;
 	--global-breakpoint-sm: 480px;
-	--global-breakpoint-md: 768px;
+	--global-breakpoint-md: 640px;
 	--global-breakpoint-lg: 1024px;
 	--global-breakpoint-xl: 1280px;
 }
 
 $global-breakpoint-xs: 360px;
 $global-breakpoint-sm: 480px;
-$global-breakpoint-md: 768px;
+$global-breakpoint-md: 640px;
 $global-breakpoint-lg: 1024px;
 $global-breakpoint-xl: 1280px;
 
 // Color variables
 :root {
+	--global-color-black: #000000;
+	--global-color-black-rgb: 0, 0, 0;
+
+	--global-color-white: #ffffff;
+	--global-color-white-rgb: 255, 255, 255;
+
+	--global-color-grey: #eeeff1;
+
+	--global-color-grey-200: #E6EAED;
+	--global-color-grey-200-rgb: 232, 232, 232;
+
+	--global-color-grey-300: #c7c7c7;
+	--global-color-grey-300-rgb: 199, 199, 199;
+
+	--global-color-grey-400: #2E2E2E;
+	--global-color-grey-400-rgb: 46, 46, 46;
+
+	--global-color-grey-500: #191919;
+	--global-color-grey-500-rgb: 26, 26, 26;
 }
 
 // Typography variables
@@ -77,4 +96,36 @@ $global-breakpoint-xl: 1280px;
 
 	--global-body-line-height: 1.0rem;
 	--global-heading-line-height: 4.0rem;
+}
+
+[data-theme="light"] {
+	--global-color-background: var(--global-color-white);
+	--global-color-background-rgb: var(--global-color-white-rgb);
+
+	--global-color-background-selected: var(--global-color-grey-200);
+	--global-color-background-selected-rgb: var(--global-color-grey-200-rgb);
+
+	--global-color-foreground: var(--global-color-black);
+	--global-color-foreground-rgb: var(--global-color-black-rgb);
+
+	--global-color-foreground-secondary: var(--global-color-grey-300);
+	--global-color-foreground-secondary-rgb: var(--global-color-grey-300-rgb);
+
+	--global-color-border: var(--global-color-grey-200);
+}
+
+[data-theme="dark"] {
+	--global-color-background: var(--global-color-black);
+	--global-color-background-rgb: var(--global-color-black-rgb);
+
+	--global-color-background-selected: var(--global-color-grey-500);
+	--global-color-background-selected-rgb: var(--global-color-grey-500-rgb);
+
+	--global-color-foreground: var(--global-color-white);
+	--global-color-foreground-rgb: var(--global-color-white-rgb);
+
+	--global-color-foreground-secondary: var(--global-color-grey-400);
+	--global-color-foreground-secondary-rgb: var(--global-color-grey-400-rgb);
+	
+	--global-color-border: var(--global-color-grey-500);
 }

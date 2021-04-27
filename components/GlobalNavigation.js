@@ -4,16 +4,20 @@ import Link from 'next/link';
 const GlobalNavigation = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
 
+	const closeMenu = () => {
+		setMenuOpen(false);
+	}
+
 	const toggleMenuOpen = () => {
 		setMenuOpen(! menuOpen);
 	}
 
 	const handleWindowResize = () => {
 		// Get the global breakpoint size from CSS.
-		const globalBreakpointMd = window.getComputedStyle(document.documentElement).getPropertyValue('--global-breakpoint-md');
-		console.log(globalBreakpointMd)
+		const globalBreakpoint = window.getComputedStyle(document.documentElement).getPropertyValue('--global-breakpoint-md');
+
 		// If the window width is greater than or equal to the breakpoint then close the menu.
-		if (window.innerWidth >= globalBreakpointMd.replace('px', '')) {
+		if (window.innerWidth >= globalBreakpoint.replace('px', '')) {
 			setMenuOpen(false);
 		}
 	}
@@ -33,49 +37,39 @@ const GlobalNavigation = () => {
 		<nav className={`GlobalNavigation ${menuOpen ? 'State-Open' : 'State-Closed'}`}>
 			<div className="GlobalNavigation-Container">
 				<div className="GlobalNavigation-Title">
-					<Link href="/">
-						<a>
-							<h4 className="GlobalNavigation-Title-Content">josephanderson.world 🌎</h4>
-						</a>
-					</Link>
+					<Link href="/" passHref><a /></Link>
+					<h4 className="GlobalNavigation-Title-Content">josephanderson.world 🌎</h4>
 				</div>
 
-				<ul className="GlobalNavigation-List">
+				<ul className="GlobalNavigation-List" onClick={closeMenu}>
 					<li className="GlobalNavigation-List-Item">
-						<Link className="GlobalNavigation-List-Item-Link" href="/about" passHref>
-							<a>
-								<p className="GlobalNavigation-Item-Content">About</p>
-							</a>
-						</Link>
+						<Link className="GlobalNavigation-List-Item-Link" href="/about" passHref><a /></Link>
+						<p className="GlobalNavigation-Item-Content">About</p>
 					</li>
 
 					<li className="GlobalNavigation-List-Item">
-						<Link className="GlobalNavigation-Item-Link" href="/journal" passHref>
-							<a>
-								<p className="GlobalNavigation-Item-Content">Journal</p>
-							</a>
-						</Link>
+						<Link className="GlobalNavigation-List-Item-Link" href="/journal" passHref><a /></Link>
+						<p className="GlobalNavigation-Item-Content">Journal</p>
 					</li>
 
 					<li className="GlobalNavigation-List-Item">
-						<Link className="GlobalNavigation-List-Item-Link" href="/" passHref>
-							<a>
-								<p className="GlobalNavigation-Item-Content">Projects</p>
-							</a>
-						</Link>
+						<Link className="GlobalNavigation-List-Item-Link" href="/projects" passHref><a /></Link>
+						<p className="GlobalNavigation-Item-Content">Projects</p>
 					</li>
 
 					<li className="GlobalNavigation-List-Item">
-						<Link className="GlobalNavigation-List-Item-Link" href="/~/documents/JosephAndersonRésumé.pdf" passHref>
-							<a>
-								<p className="GlobalNavigation-Item-Content">Résumé</p>
-							</a>
-						</Link>
+						<Link className="GlobalNavigation-List-Item-Link" href="/~/documents/JosephAndersonRésumé.pdf" passHref><a /></Link>
+						<p className="GlobalNavigation-Item-Content">Résumé</p>
 					</li>
 				</ul>
 
 				<div className="GlobalNavigation-CommandButton" onClick={toggleMenuOpen}>
-					<h4 className="GlobalNavigation-CommandButton-Content">⌘</h4>
+					<h4 className="GlobalNavigation-CommandButton-Content">
+						{ menuOpen
+							? <span>↑</span>
+							: <span>⌘</span>
+						}
+					</h4>
 				</div>
 			</div>
 		</nav>
