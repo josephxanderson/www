@@ -12,6 +12,26 @@ nav.GlobalNavigation {
 	width: 100%;
 	height: auto;
 
+	&.State-Open {
+
+		div.GlobalNavigation-Container {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		ul.GlobalNavigation-List {
+			display: flex;
+		}
+
+		.GlobalNavigation-CommandButton {
+			align-self: flex-end;
+		    position: absolute;
+		    justify-self: flex-end;
+		    top: var(--global-spacing-md);
+		}
+
+	}
+
 	div.GlobalNavigation-Container {
 		position: relative;
 		display: flex;
@@ -33,10 +53,24 @@ nav.GlobalNavigation {
 		padding-left: var(--global-spacing-md);
 	}
 
-	.GlobalNavigation-Title {
+	div.GlobalNavigation-Title {
+		position: relative;
+		display: flex;
+
+		align-items: center;
+		justify-content: center;
+
+		width: auto;
+		height: auto;
+
 		margin-bottom: 0;
 
-		cursor: pointer;
+		user-select: none;
+
+		.GlobalNavigation-Title-Content {
+			// ...
+		}
+		
 	}
 
 	ul.GlobalNavigation-List {
@@ -51,28 +85,55 @@ nav.GlobalNavigation {
 
 		@media (max-width: variables.$global-breakpoint-md) {
 			display: none;
+
+			flex-direction: column;
 		} // @media
 
 		li.GlobalNavigation-List-Item {
+			position: relative;
+			display: block;
 
 			padding-top: 0;
 			padding-right: var(--global-spacing-xs);
 			padding-bottom: 0;
 			padding-left: var(--global-spacing-xs);
-		}
-	
-	}
 
-	.GlobalNavigation-CommandButton {
+			&:last-of-type {
+				padding-right: 0;
+			} // :last-of-type
+
+			@media (max-width: variables.$global-breakpoint-md) {
+				padding-left: 0;
+				padding-right: 0;
+			} // @media
+
+		} // li.GlobalNavigation-List-Item
+	
+	} // ul.GlobalNavigation-List
+
+	div.GlobalNavigation-CommandButton {
+		position: relative;
 		display: none;
+
+		align-items: center;
+		justify-content: center;
+
+		width: auto;
+		height: auto;
 
 		margin-bottom: 0;
 
 		cursor: pointer;
+		user-select: none;
 
 		@media (max-width: variables.$global-breakpoint-md) {
-			display: block;
+			display: flex;
 		} // @media
-	}
 
-}
+		.GlobalNavigation-CommandButton-Content {
+			// ...
+		} // .GlobalNavigation-CommandButton-Content
+
+	} // div.GlobalNavigation-CommandButton
+
+} // nav.GlobalNavigation
