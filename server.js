@@ -20,11 +20,9 @@ const port = process.env.PORT || 5000;
 app.prepare().then(() => {
 	createServer((req, res) => {
 		const parsedUrl = parse(req.url, true);
-		console.log(req.headers['x-forwarded-proto']);
 
 		// If not in Dev environment and not https.
 		if ((! inDevEnvironment) && (req.headers['x-forwarded-proto'] != 'https')) {
-		console.log('in node production and not https');
 			// Redirect http to https.
 	  		res.writeHead(302, {
 				Location: `https://${process.env.APP_URL}${req.url}`
@@ -32,7 +30,6 @@ app.prepare().then(() => {
 
 			res.end();
 		} else {
-		console.log('not in node production and maybe https');
 			// Pass on the request to be handled normally.
 			handle(req, res, parsedUrl)
 		}
