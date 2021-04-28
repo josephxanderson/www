@@ -111,13 +111,13 @@ span {
 p {
 	font-family: var(--global-body-font-family);
 	font-feature-settings: var(--global-text-features-basic);
-	font-size: var(--global-text-size-sm);
+	font-size: var(--global-text-size-md);
 	font-style: normal;
 	font-smoothing: antialiased;
 	font-weight: var(--global-body-font-weight-regular);
 	letter-spacing: -0.020rem;
-	line-height: calc(var(--global-text-size-sm) * var(--global-text-vspace-multiplier));
-	margin-bottom: calc(var(--global-spacing-sm) / (var(--global-text-vspace-multiplier) * 4));
+	line-height: calc(var(--global-text-size-md) * var(--global-text-vspace-multiplier));
+	margin-bottom: calc(var(--global-spacing-md) / (var(--global-text-vspace-multiplier)));
 
 	&:last-child {
 		margin-bottom: 0;

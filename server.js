@@ -12,7 +12,7 @@ const inDevEnvironment = process.env.NODE_ENV !== 'production';
 
 // Create the app and get the request handler.
 // This also puts us either in next or next dev mode.
-const app = next({ inDevEnvironment });
+const app = next({ dev: inDevEnvironment });
 const handle = app.getRequestHandler();
 
 const port = process.env.PORT || 5000;

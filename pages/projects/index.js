@@ -1,11 +1,13 @@
 // Application imports
-import Layout from '../../layouts/Journal';
+import Layout from '../../layouts/Main';
 import PageHeader from '../../components/PageHeader';
 
 const Index = () => {
 	return (
-		<Layout title="Joseph Anderson's Journal">
-			<PageHeader heading="Journal" />
+		<Layout title="Projects">
+			<PageHeader heading="Projects" />
+
+			<h3>PATCO Companion</h3>
 		</Layout>
 	);
 }

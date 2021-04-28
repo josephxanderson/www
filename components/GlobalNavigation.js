@@ -36,7 +36,7 @@ const GlobalNavigation = () => {
 	return (
 		<nav className={`GlobalNavigation ${menuOpen ? 'State-Open' : 'State-Closed'}`}>
 			<div className="GlobalNavigation-Container">
-				<div className="GlobalNavigation-Title">
+				<div className="GlobalNavigation-Title" onClick={closeMenu}>
 					<Link href="/" passHref><a /></Link>
 					<h4 className="GlobalNavigation-Title-Content">josephanderson.world 🌎</h4>
 				</div>
@@ -44,22 +44,22 @@ const GlobalNavigation = () => {
 				<ul className="GlobalNavigation-List" onClick={closeMenu}>
 					<li className="GlobalNavigation-List-Item">
 						<Link className="GlobalNavigation-List-Item-Link" href="/about" passHref><a /></Link>
-						<p className="GlobalNavigation-Item-Content">About</p>
+						<h5 className="GlobalNavigation-Item-Content">About</h5>
 					</li>
 
 					<li className="GlobalNavigation-List-Item">
 						<Link className="GlobalNavigation-List-Item-Link" href="/journal" passHref><a /></Link>
-						<p className="GlobalNavigation-Item-Content">Journal</p>
+						<h5 className="GlobalNavigation-Item-Content">Journal</h5>
 					</li>
 
 					<li className="GlobalNavigation-List-Item">
 						<Link className="GlobalNavigation-List-Item-Link" href="/projects" passHref><a /></Link>
-						<p className="GlobalNavigation-Item-Content">Projects</p>
+						<h5 className="GlobalNavigation-Item-Content">Projects</h5>
 					</li>
 
 					<li className="GlobalNavigation-List-Item">
 						<Link className="GlobalNavigation-List-Item-Link" href="/~/documents/JosephAndersonRésumé.pdf" passHref><a /></Link>
-						<p className="GlobalNavigation-Item-Content">Résumé</p>
+						<h5 className="GlobalNavigation-Item-Content">Résumé</h5>
 					</li>
 				</ul>
 
