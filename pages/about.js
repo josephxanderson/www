@@ -20,7 +20,7 @@ const About = () => {
 			</p>
 
 			<p>
-				I am a self-taught individual. I've been programming and designing since I was 10 years old. I started out building web browsers in Visual Basic .NET. I then began to explore the then-new HTML5 and CSS3.
+				I am a self-taught individual. I've been using the computer since before I was a year old, and I have been programming and designing since before I was 10. I started out building web browsers in Visual Basic .NET. I then began to explore the then-new HTML5 and CSS3.
 			</p>
 
 			<p>
