@@ -5,6 +5,9 @@ const { parse } = require('url');
 // Framework imports
 const next = require('next');
 
+// Package imports
+require('dotenv').config();
+
 const inDevEnvironment = process.env.NODE_ENV !== 'production';
 
 // Create the app and get the request handler.
@@ -20,11 +23,9 @@ app.prepare().then(() => {
 
 		// If not in Dev environment and not https.
 		if ((! inDevEnvironment) && (req.headers['X-Forwarded-Proto'] != 'https')) {
-			const { host } = parse(process.env.APP_URL);
-
 			// Redirect http to https.
 	  		res.writeHead(302, {
-				Location: `https://${host}${req.url}`
+				Location: `https://${process.env.APP_URL}${req.url}`
 			});
 
 			res.end();
@@ -36,7 +37,7 @@ app.prepare().then(() => {
 		if (err) {
 			throw err
 		} else {
-			console.log(`>>> Ready on http://localhost:${port}`);
+			console.log(`>>> Ready on http://${process.env.APP_URL}:${port}`);
 		}
 	})
 })
