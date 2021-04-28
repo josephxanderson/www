@@ -90,9 +90,30 @@ nav.GlobalNavigation {
 
 		user-select: none;
 
+		background-clip: padding-box;
+		border: 0.175rem solid transparent;
+
+		&:after {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: -0.175rem;
+			border-radius: inherit;
+
+			background: transparent;
+		}
 
 		&:active {
-			background-color: var(--global-color-foreground-secondary);
+			background-color: var(--global-color-background);
+
+			&:after {
+				background: linear-gradient(to right,#fdde5c,#f8ab5e,#f56a62,#a176c8,#759beb,#65beb3,#70db96);
+			}
+
 		}
 
 		a {
@@ -168,7 +189,7 @@ nav.GlobalNavigation {
 			}
 
 			&:active {
-				background-color: var(--global-color-foreground-secondary);
+				background-color: var(--global-color-background);
 
 				&:after {
 					background: linear-gradient(to right,#fdde5c,#f8ab5e,#f56a62,#a176c8,#759beb,#65beb3,#70db96);
@@ -198,12 +219,16 @@ nav.GlobalNavigation {
 				padding-top: var(--global-spacing-xs);
 				padding-left: var(--global-spacing-xs);
 				padding-bottom: var(--global-spacing-xs);
-				padding-right: 0;
+				padding-right: var(--global-spacing-xs);
 
 				margin-top: var(--global-spacing-xs);
 				margin-left: 0;
 
 				background-color: var(--global-color-background-selected);
+
+				&:active {
+					background-color: var(--global-color-background-selected);
+				}
 
 				&:after {
 					background: var(--global-color-background-selected);
@@ -241,8 +266,29 @@ nav.GlobalNavigation {
 		cursor: pointer;
 		user-select: none;
 
+		background-clip: padding-box;
+		border: 0.175rem solid transparent;
+
+		&:after {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: -0.175rem;
+			border-radius: inherit;
+
+			background: transparent;
+		}
+
 		&:active {
-			background-color: var(--global-color-foreground-secondary);
+			background-color: var(--global-color-background);
+
+			&:after {
+				background: linear-gradient(to right,#fdde5c,#f8ab5e,#f56a62,#a176c8,#759beb,#65beb3,#70db96);
+			}
 		}
 
 		@media (max-width: variables.$global-breakpoint-md) {

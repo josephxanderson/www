@@ -47,9 +47,9 @@ body {
 			margin: 0 auto;
 
 			padding-top: 0;
-			padding-right: var(--global-spacing-sm);
+			padding-right: calc(var(--global-spacing-sm) + var(--global-spacing-xs));
 			padding-bottom: 0;
-			padding-left: var(--global-spacing-sm);
+			padding-left: calc(var(--global-spacing-sm) + var(--global-spacing-xs));
 
 			// @media (max-width: variables.$global-breakpoint-md) {
 				
@@ -60,6 +60,9 @@ body {
 				.PageHeader-Heading {
 				    position: relative;
 				    display: block;
+
+				    margin-bottom: var(--global-spacing-md);
+				    padding-bottom: 0.14em; // prevent descenders from getting cut off.
 				}
 
 				.PageHeader-Subheading {
