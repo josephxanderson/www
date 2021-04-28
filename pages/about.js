@@ -12,7 +12,11 @@ const About = () => {
 			</p>
 
 			<p>
-				I design and build full-stack Laravel and React apps. I enjoy researching and building well-designed, accessible experiences for mobility, transportation, climate, and the environment by bringing together data, design, and technology.
+				I enjoy researching and building well-designed, accessible experiences for mobility, transportation, climate, and the environment by bringing together data, design, and technology.
+			</p>
+
+			<p>
+				I have a great interest in public transportation, mobility, and accessibility. I believe that good design can improve the lives of individuals who travel by transit, and those who require accessibility accomodations in their every day lives.
 			</p>
 
 			<p>
@@ -21,6 +25,10 @@ const About = () => {
 
 			<p>
 				With time, I moved on to learning JavaScript and PHP. I discovered the Laravel framework in 2014, which fueled my dream of becoming a software developer. Since then, I have had experience designing and building websites, web apps, and mobile apps; as well as designing brand identities, colorways, and marketing materials.
+			</p>
+
+			<p>
+				Today, I design and build full-stack Laravel and React apps.
 			</p>
 
 			<p>
