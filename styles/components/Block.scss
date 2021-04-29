@@ -1,0 +1,55 @@
+div.Block {
+	position: relative;
+    display: flex;
+
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+
+	width: auto;
+	height: auto;
+
+	padding-top: var(--global-spacing-xs);
+	padding-right: var(--global-spacing-xs);
+	padding-bottom: var(--global-spacing-xs);
+	padding-left: var(--global-spacing-xs);
+
+	background-color: var(--global-color-background);
+
+	border-radius: 0.25rem;
+
+	background-clip: padding-box;
+
+	border-width: var(--global-size-border-width);
+	border-style: solid;
+	border-color: var(--global-color-border);
+
+	div.Block-Image {
+		position: relative;
+		display: block;
+		
+		z-index: 1;
+
+		width: 50%;
+		height: 30rem;
+
+    	figure.Block-Image {
+			position: relative;
+			display: block;
+
+		    width: 100%;
+		    height: 100%;
+
+		    margin: 0;
+		    padding: 0;
+
+		    border: 0;
+
+		    background-size: cover;
+		    background-position: 50%;
+		    background-repeat: no-repeat;	
+    	}	
+
+	}
+
+}
