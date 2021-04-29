@@ -48,18 +48,18 @@ const GlobalNavigation = () => {
 					</li>
 
 					<li className="GlobalNavigation-List-Item">
-						<Link className="GlobalNavigation-List-Item-Link" href="/journal" passHref><a /></Link>
-						<h5 className="GlobalNavigation-Item-Content">Journal</h5>
-					</li>
-
-					<li className="GlobalNavigation-List-Item">
 						<Link className="GlobalNavigation-List-Item-Link" href="/projects" passHref><a /></Link>
 						<h5 className="GlobalNavigation-Item-Content">Projects</h5>
 					</li>
 
 					<li className="GlobalNavigation-List-Item">
-						<Link className="GlobalNavigation-List-Item-Link" href="/~/documents/JosephAndersonRésumé.pdf" passHref><a /></Link>
-						<h5 className="GlobalNavigation-Item-Content">Résumé</h5>
+						<Link className="GlobalNavigation-List-Item-Link" href="/journal" passHref><a /></Link>
+						<h5 className="GlobalNavigation-Item-Content">Journal</h5>
+					</li>
+
+					<li className="GlobalNavigation-List-Item">
+						<Link className="GlobalNavigation-List-Item-Link" href="https://github.com/josephxanderson" passHref><a /></Link>
+						<h5 className="GlobalNavigation-Item-Content">GitHub ↗</h5>
 					</li>
 				</ul>
 
