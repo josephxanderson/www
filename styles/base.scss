@@ -99,33 +99,6 @@ body {
 
 			}
 
-			div.TextBlocks {
-
-				p.TextBlock {
-
-					a {
-						border-bottom-width: 0.175rem;
-						border-bottom-style: solid;
-						border-image-slice: 1;
-						border-image-source: var(--global-color-foreground);
-
-						-webkit-background-clip: text;
-						-webkit-text-fill-color: transparent;
-						-webkit-background-clip: text; // webkit-specific
-						-webkit-text-fill-color: transparent; // webkit-specific
-
-						background-color: var(--global-color-foreground);
-
-						&:active {
-							border-image-source: linear-gradient(to right, var(--global-color-gradient));
-							background-image: linear-gradient(to right, var(--global-color-gradient));
-						}
-					}
-
-				}
-
-			}
-
 		} // main.PageContainer
 
 	} // div#__next
