@@ -39,6 +39,7 @@ $global-breakpoint-xl: 1280px;
 	--global-color-white-rgb: 255, 255, 255;
 
 	--global-color-grey: #eeeff1;
+	--global-color-grey-rgb: 240, 240, 240;
 
 	--global-color-grey-200: #E6EAED;
 	--global-color-grey-200-rgb: 232, 232, 232;
@@ -52,7 +53,15 @@ $global-breakpoint-xl: 1280px;
 	--global-color-grey-500: #191919;
 	--global-color-grey-500-rgb: 26, 26, 26;
 
-	--global-color-gradient: #fdde5c, #f8ab5e, #f56a62, #a176c8, #759beb, #65beb3, #70db96;
+	--global-color-yellow: #FFE90F;
+	--global-color-orange: #FF7700;
+	--global-color-red: #F24C4F;
+	--global-color-purple: #E907A0;
+	--global-color-blue: #759beb;
+	--global-color-cyan: #65beb3;
+	--global-color-green: #C2EB3C;
+
+	--global-color-gradient: var(--global-color-yellow), var(--global-color-orange), var(--global-color-red), var(--global-color-purple), var(--global-color-blue), var(--global-color-cyan), var(--global-color-green);
 }
 
 // Typography variables
@@ -107,8 +116,8 @@ $global-breakpoint-xl: 1280px;
 	--global-color-background: var(--global-color-white);
 	--global-color-background-rgb: var(--global-color-white-rgb);
 
-	--global-color-background-selected: var(--global-color-grey-200);
-	--global-color-background-selected-rgb: var(--global-color-grey-200-rgb);
+	--global-color-background-selected: var(--global-color-grey);
+	--global-color-background-selected-rgb: var(--global-color-grey-rgb);
 
 	--global-color-foreground: var(--global-color-black);
 	--global-color-foreground-rgb: var(--global-color-black-rgb);

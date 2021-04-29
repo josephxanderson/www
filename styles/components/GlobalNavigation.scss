@@ -28,7 +28,14 @@ nav.GlobalNavigation {
 		    position: absolute;
 		    justify-self: flex-end;
 
-		    top: var(--global-spacing-md);	
+		    top: var(--global-spacing-md);
+
+			background-color: var(--global-color-background-selected);
+
+			&:after {
+				background: linear-gradient(to right, var(--global-color-cyan), var(--global-color-green));
+			}
+
 		}
 
 	}
@@ -111,12 +118,21 @@ nav.GlobalNavigation {
 		}
 
 		&:active {
-			background-color: var(--global-color-background);
+			background-color: var(--global-color-background-selected);
 
 			&:after {
-				background: linear-gradient(to right, var(--global-color-gradient));
+				// First part of the gradient.
+				background: linear-gradient(to right, var(--global-color-yellow), var(--global-color-orange), var(--global-color-red));
 			}
+		}
 
+		@media (max-width: variables.$global-breakpoint-md) {
+			&:active {
+				&:after {
+					// More gradient for mobile, since we'll be the largest element.
+					background: linear-gradient(to right, var(--global-color-yellow), var(--global-color-orange), var(--global-color-red), var(--global-color-purple), var(--global-color-blue), var(--global-color-cyan));
+				}
+			}
 		}
 
 		a {
@@ -170,7 +186,7 @@ nav.GlobalNavigation {
 
 			margin-left: var(--global-spacing-xs);
 
-			background-color: transparent;
+			background-color: var(--global-color-background);
 
 			border-radius: 0.25rem;
 
@@ -195,12 +211,39 @@ nav.GlobalNavigation {
 			}
 
 			&:active {
-				background-color: var(--global-color-background);
+				background-color: var(--global-color-background-selected);
+			}
 
-				&:after {
-					background: linear-gradient(to right, var(--global-color-gradient));
+			&:nth-of-type(1) {
+				&:active {
+					&:after {
+						background: linear-gradient(to right, var(--global-color-red), var(--global-color-purple));
+					}
 				}
+			}
 
+			&:nth-of-type(2) {
+				&:active {
+					&:after {
+						background: linear-gradient(to right, var(--global-color-purple), var(--global-color-blue));
+					}
+				}
+			}
+
+			&:nth-of-type(3) {
+				&:active {
+					&:after {
+						background: linear-gradient(to right, var(--global-color-blue), var(--global-color-cyan));
+					}
+				}
+			}
+
+			&:nth-of-type(4) {
+				&:active {
+					&:after {
+						background: linear-gradient(to right, var(--global-color-cyan), var(--global-color-green));
+					}
+				}
 			}
 
 			a {
@@ -290,10 +333,10 @@ nav.GlobalNavigation {
 		}
 
 		&:active {
-			background-color: var(--global-color-background);
+			background-color: var(--global-color-background-selected);
 
 			&:after {
-				background: linear-gradient(to right, var(--global-color-gradient));
+				background: linear-gradient(to right, var(--global-color-cyan), var(--global-color-green));
 			}
 		}
 
@@ -306,7 +349,7 @@ nav.GlobalNavigation {
 			-webkit-text-fill-color: transparent;
 			text-fill-color: transparent;
 
-			background-image: linear-gradient(to top right, var(--global-color-gradient));
+			background-image: linear-gradient(to bottom right, var(--global-color-gradient));
 			
 		} // .GlobalNavigation-CommandButton-Content
 

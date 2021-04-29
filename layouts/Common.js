@@ -21,10 +21,10 @@ const Common = ({ title, description }) => {
 			<meta property="og:description" content={description ? description : defaultDescription} />
 			<meta property="og:type" content="website" />
 			<meta property="og:url" content={typeof window !== 'undefined' && window.location.hostname ? window.location.hostname : ''} />
-			<meta property="og:image" content="/favicon.png" />
+			<meta property="og:image" content="/images/global/favicon.png" />
 
-			<link rel="icon" href="/favicon.png" />
-			<link rel="apple-touch-icon" href="/favicon.png" />
+			<link rel="icon" href="/images/global/favicon.png" />
+			<link rel="apple-touch-icon" href="/images/global/apple-touch-icon.png" />
 		</Head>
 	</>);
 }

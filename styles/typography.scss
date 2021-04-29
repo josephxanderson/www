@@ -119,6 +119,7 @@ p {
 	letter-spacing: -0.020rem;
 	line-height: 160%;
 	margin-bottom: calc(var(--global-spacing-sm) * var(--global-text-vspace-multiplier));
+	line-break: anywhere;
 
 	&:last-child {
 		margin-bottom: 0;

@@ -1,5 +1,9 @@
 @use './variables';
 
+* {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0.0);
+}
+
 html {
 	position: relative;
 	display: block;
@@ -109,7 +113,7 @@ body {
 						-webkit-text-fill-color: transparent;
 						-webkit-background-clip: text; // webkit-specific
 						-webkit-text-fill-color: transparent; // webkit-specific
-						
+
 						background-color: var(--global-color-foreground);
 
 						&:active {
