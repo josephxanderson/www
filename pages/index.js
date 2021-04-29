@@ -15,22 +15,7 @@ const Home = () => {
 
 			<div className="TextBlocks">
 				<p className="TextBlock">
-					This is my personal website. Here, you can&nbsp;
-
-					<Link href="/about" passHref>
-						<a>learn more about me</a>
-					</Link>
-					,&nbsp;
-
-					<Link href="/journal" passHref>
-						<a>read my writings</a>
-					</Link>
-					,&nbsp;or&nbsp;
-					
-					<Link href="/projects" passHref>
-						<a>explore my design and software projects</a>
-					</Link>
-					.
+					This is my personal website. Here, you can <Link href="/about" passHref><a>learn more about me</a></Link>, <Link href="/projects" passHref><a>explore my design and software projects</a></Link>, or <Link href="/journal" passHref><a>read my journal</a></Link> on design and development.
 				</p>
 
 				<p className="TextBlock">
