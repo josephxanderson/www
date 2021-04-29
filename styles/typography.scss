@@ -43,6 +43,17 @@ h2,
 h3,
 h4,
 h5,
+h6,
+p,
+span {
+	white-space: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
 h6 {
 	font-family: var(--global-heading-font-family);
 	font-feature-settings: var(--global-text-features-basic);
@@ -119,7 +130,7 @@ p {
 	letter-spacing: -0.020rem;
 	line-height: 160%;
 	margin-bottom: calc(var(--global-spacing-sm) * var(--global-text-vspace-multiplier));
-	line-break: anywhere;
+	line-break: auto;
 
 	&:last-child {
 		margin-bottom: 0;
@@ -127,6 +138,9 @@ p {
 }
 
 a {
+	position: relative;
+	display: inline;
+
 	text-decoration: none;
 	color: inherit;
 }
