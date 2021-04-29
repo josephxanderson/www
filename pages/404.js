@@ -2,7 +2,7 @@
 import Layout from '../layouts/Main';
 import PageHeader from '../components/PageHeader';
 
-const Index = () => {
+const Error404 = () => {
 	return (
 		<Layout>
 			<PageHeader heading="Can’t find that" />
@@ -14,4 +14,4 @@ const Index = () => {
 	);
 }
 
-export default Index;
+export default Error404;
