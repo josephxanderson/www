@@ -1,10 +1,29 @@
 // Framework imports
+import { useLayoutEffect } from 'react';
 import Head from 'next/head';
 
 const Common = ({ title, description }) => {
 	const defaultTitle = 'Joseph Anderson';
 	const defaultDescription = 'Joseph Anderson is a New Jersey-based software developer and designer.';
 	
+	let root = null;
+	let headerElement = null;
+	let resizeObserver = null;
+	let findHeaderElement = null;
+
+	useLayoutEffect(() => {
+		root = document.documentElement;
+		headerElement = document.getElementsByClassName('GlobalNavigation')[0];
+
+		if (headerElement) {
+			resizeObserver = new ResizeObserver(getHeaderHeight).observe(headerElement);
+		}
+	}, []);
+
+	const getHeaderHeight = () => {
+		root.style.setProperty('--component-globalnavigation-height', headerElement.offsetHeight + 'px');
+	}
+
 	return (<>
 		<Head>
 			{/* HTML Info */}
