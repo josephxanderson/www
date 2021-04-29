@@ -91,7 +91,10 @@ nav.GlobalNavigation {
 		user-select: none;
 
 		background-clip: padding-box;
-		border: 0.175rem solid transparent;
+
+		border-width: var(--global-size-border-width);
+		border-style: solid;
+		border-color: transparent;
 
 		&:after {
 			content: '';
@@ -111,7 +114,7 @@ nav.GlobalNavigation {
 			background-color: var(--global-color-background);
 
 			&:after {
-				background: linear-gradient(to right,#fdde5c,#f8ab5e,#f56a62,#a176c8,#759beb,#65beb3,#70db96);
+				background: linear-gradient(to right, var(--global-color-gradient));
 			}
 
 		}
@@ -172,7 +175,10 @@ nav.GlobalNavigation {
 			border-radius: 0.25rem;
 
 		    background-clip: padding-box;
-		    border: 0.175rem solid transparent;
+
+			border-width: var(--global-size-border-width);
+			border-style: solid;
+			border-color: transparent;
 
 			&:after {
 				content: '';
@@ -192,7 +198,7 @@ nav.GlobalNavigation {
 				background-color: var(--global-color-background);
 
 				&:after {
-					background: linear-gradient(to right,#fdde5c,#f8ab5e,#f56a62,#a176c8,#759beb,#65beb3,#70db96);
+					background: linear-gradient(to right, var(--global-color-gradient));
 				}
 
 			}
@@ -287,7 +293,7 @@ nav.GlobalNavigation {
 			background-color: var(--global-color-background);
 
 			&:after {
-				background: linear-gradient(to right,#fdde5c,#f8ab5e,#f56a62,#a176c8,#759beb,#65beb3,#70db96);
+				background: linear-gradient(to right, var(--global-color-gradient));
 			}
 		}
 
@@ -300,7 +306,7 @@ nav.GlobalNavigation {
 			-webkit-text-fill-color: transparent;
 			text-fill-color: transparent;
 
-			background-image: linear-gradient(to top right, #fdde5c,#f8ab5e,#f56a62,#a176c8,#759beb,#65beb3,#70db96);
+			background-image: linear-gradient(to top right, var(--global-color-gradient));
 			
 		} // .GlobalNavigation-CommandButton-Content
 

@@ -9,34 +9,33 @@ const Home = () => {
 	return (
 		<Layout>
 			<PageHeader 
-				heading="👋🏼 I'm Joseph, a New Jersey-based software developer and designer."
-				subheading="I design and build full-stack Laravel and React apps."
+				heading="👋🏼 I’m Joseph, a New Jersey-based software developer and creative."
+				subheading="I design and develop full-stack apps for web and mobile."
 			/>
 
-			<div className="Page-Home-Introduction">
-				<h3 className="Page-Home-Introduction-Content">
-					I am interested in researching and building well-designed, accessible experiences for mobility, transportation, climate, and the environment.
-				</h3>
-
-				<h3 className="Page-Home-Introduction-Content">
-					This is my personal website. Here, you can
+			<div className="TextBlocks">
+				<p className="TextBlock">
+					This is my personal website. Here, you can&nbsp;
 
 					<Link href="/about" passHref>
-						<a>&nbsp;learn more about me,</a>
+						<a>learn more about me</a>
 					</Link>
+					,&nbsp;
 
 					<Link href="/journal" passHref>
-						<a>&nbsp;read my writings, or</a>
+						<a>read my writings</a>
 					</Link>
-
+					,&nbsp;or&nbsp;
+					
 					<Link href="/projects" passHref>
-						<a>&nbsp;explore my design and software projects.</a>
+						<a>explore my design and software projects</a>
 					</Link>
-				</h3>
+					.
+				</p>
 
-				<h3 className="Page-Home-Introduction-Content">
-					You can also find me @josephxanderson around the internet.
-				</h3>
+				<p className="TextBlock">
+					Thanks for visiting.
+				</p>
 			</div>
 		</Layout>
 	);

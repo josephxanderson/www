@@ -51,6 +51,8 @@ $global-breakpoint-xl: 1280px;
 
 	--global-color-grey-500: #191919;
 	--global-color-grey-500-rgb: 26, 26, 26;
+
+	--global-color-gradient: #fdde5c, #f8ab5e, #f56a62, #a176c8, #759beb, #65beb3, #70db96;
 }
 
 // Typography variables
@@ -76,13 +78,13 @@ $global-breakpoint-xl: 1280px;
 	--global-text-features-basic: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
 
 	// Base type size
-	--global-text-size: 1.0rem;
+	--global-text-size: 1.0;
 
 	// Type scaling ratio
 	--global-text-scale-ratio: 1.4;
 
 	// Type sizes
-	--global-text-size-xxxs: calc(var(--global-text-size) - 0.7rem); // Base type size
+	--global-text-size-xxxs: calc(var(--global-text-size) - 0.6); // Base type size
 	--global-text-size-xxs: calc(var(--global-text-size-xxxs) * var(--global-text-scale-ratio));
 	--global-text-size-xs: calc(var(--global-text-size-xxs) * var(--global-text-scale-ratio));
 	--global-text-size-sm: calc(var(--global-text-size-xs) * var(--global-text-scale-ratio));
@@ -92,12 +94,15 @@ $global-breakpoint-xl: 1280px;
 	--global-text-size-xxl: calc(var(--global-text-size-xl) * var(--global-text-scale-ratio));
 	--global-text-size-xxxl: calc(var(--global-text-size-xxl) * var(--global-text-scale-ratio));
 
-	--global-text-vspace-multiplier: 1.2;
-
-	--global-body-line-height: 1.0rem;
-	--global-heading-line-height: 4.0rem;
+	--global-text-vspace-multiplier: 0.75;
 }
 
+// Sizing variables
+:root {
+	--global-size-border-width: 0.175rem;
+}
+
+// Light theme variables
 [data-theme="light"] {
 	--global-color-background: var(--global-color-white);
 	--global-color-background-rgb: var(--global-color-white-rgb);
@@ -114,6 +119,7 @@ $global-breakpoint-xl: 1280px;
 	--global-color-border: var(--global-color-grey-200);
 }
 
+// Dark theme variables
 [data-theme="dark"] {
 	--global-color-background: var(--global-color-black);
 	--global-color-background-rgb: var(--global-color-black-rgb);
@@ -124,8 +130,8 @@ $global-breakpoint-xl: 1280px;
 	--global-color-foreground: var(--global-color-white);
 	--global-color-foreground-rgb: var(--global-color-white-rgb);
 
-	--global-color-foreground-secondary: var(--global-color-grey-400);
-	--global-color-foreground-secondary-rgb: var(--global-color-grey-400-rgb);
+	--global-color-foreground-secondary: var(--global-color-grey-300);
+	--global-color-foreground-secondary-rgb: var(--global-color-grey-300-rgb);
 	
 	--global-color-border: var(--global-color-grey-500);
 }

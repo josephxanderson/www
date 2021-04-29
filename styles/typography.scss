@@ -55,50 +55,51 @@ h6 {
 }
 
 h1 {
-	font-size: var(--global-text-size-xl);
+	font-size: calc(var(--global-text-size-lg) * 1rem);
 	font-weight: var(--global-heading-font-weight-bold);
 	letter-spacing: -0.075rem;
-	line-height: calc(var(--global-text-size-xl) * var(--global-text-vspace-multiplier));
-	margin-bottom: calc(var(--global-spacing-xl) / (var(--global-text-vspace-multiplier) * 4));
+	line-height: 120%;
+	margin-bottom: calc(var(--global-spacing-lg) * var(--global-text-vspace-multiplier));
 }
 
 h2 {
-	font-size: var(--global-text-size-lg);
+	font-size: calc(var(--global-text-size-md) * 1rem);
 	font-weight: var(--global-heading-font-weight-bold);
 	letter-spacing: -0.075rem;
-	line-height: calc(var(--global-text-size-lg) * var(--global-text-vspace-multiplier));
-	margin-bottom: calc(var(--global-spacing-lg) / (var(--global-text-vspace-multiplier) * 4));
+	line-height: 120%;
+	margin-bottom: calc(var(--global-spacing-md) * var(--global-text-vspace-multiplier));
 }
 
 h3 {
-	font-size: var(--global-text-size-lg);
+	font-size: calc(var(--global-text-size-md) * 1rem);
 	font-weight: var(--global-heading-font-weight-medium);
 	letter-spacing: -0.050rem;
-	line-height: calc(var(--global-text-size-lg) * var(--global-text-vspace-multiplier));
-	margin-bottom: calc(var(--global-spacing-lg) / (var(--global-text-vspace-multiplier) * 4));
+	line-height: 120%;
+	margin-bottom: calc(var(--global-spacing-md) * var(--global-text-vspace-multiplier));
 }
 
 h4 {
-	font-size: var(--global-text-size-md);
+	font-size: calc(var(--global-text-size-sm) * 1rem);
 	font-weight: var(--global-heading-font-weight-medium);
 	letter-spacing: -0.035rem;
-	line-height: calc(var(--global-text-size-md) * var(--global-text-vspace-multiplier));
-	margin-bottom: calc(var(--global-spacing-md) / (var(--global-text-vspace-multiplier) * 4));
+	line-height: 120%;
+	margin-bottom: calc(var(--global-spacing-sm) * var(--global-text-vspace-multiplier));
 }
 
 h5 {
-	font-size: var(--global-text-size-sm);
+	font-size: calc(var(--global-text-size-xs) * 1rem);
 	font-weight: var(--global-heading-font-weight-regular);
-	line-height: calc(var(--global-text-size-sm) * var(--global-text-vspace-multiplier));
-	margin-bottom: calc(var(--global-spacing-sm) / (var(--global-text-vspace-multiplier) * 4));
+	line-height: 120%;
+	margin-bottom: calc(var(--global-spacing-xs) * var(--global-text-vspace-multiplier));
 }
 
 h6 {
-	font-size: var(--global-text-size-xs);
+	font-size: calc(var(--global-text-size-xs) * 1rem);
 	font-weight: var(--global-heading-font-weight-bold);
 	text-transform: uppercase;
-	line-height: calc(var(--global-text-size-xs) * var(--global-text-vspace-multiplier));
-	margin-bottom: calc(var(--global-spacing-xs) / (var(--global-text-vspace-multiplier) * 4));
+	letter-spacing: 0.045rem;
+	line-height: 120%;
+	margin-bottom: calc(var(--global-spacing-xs) * var(--global-text-vspace-multiplier));
 }
 
 span {
@@ -111,13 +112,13 @@ span {
 p {
 	font-family: var(--global-body-font-family);
 	font-feature-settings: var(--global-text-features-basic);
-	font-size: var(--global-text-size-md);
+	font-size: calc(var(--global-text-size-sm) * 1rem);
 	font-style: normal;
 	font-smoothing: antialiased;
 	font-weight: var(--global-body-font-weight-regular);
 	letter-spacing: -0.020rem;
-	line-height: calc(var(--global-text-size-md) * var(--global-text-vspace-multiplier));
-	margin-bottom: calc(var(--global-spacing-md) / (var(--global-text-vspace-multiplier)));
+	line-height: 160%;
+	margin-bottom: calc(var(--global-spacing-sm) * var(--global-text-vspace-multiplier));
 
 	&:last-child {
 		margin-bottom: 0;
