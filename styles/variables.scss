@@ -62,6 +62,8 @@ $global-breakpoint-xl: 1280px;
 	--global-color-green: #C2EB3C;
 
 	--global-color-gradient: var(--global-color-yellow), var(--global-color-orange), var(--global-color-red), var(--global-color-purple), var(--global-color-blue), var(--global-color-cyan), var(--global-color-green);
+
+	--global-backdrop-filter: saturate(180%) blur(6px);
 }
 
 // Typography variables

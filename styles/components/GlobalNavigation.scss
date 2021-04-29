@@ -6,11 +6,18 @@
 }
 
 nav.GlobalNavigation {
-	position: relative;
+	position: fixed;
 	display: block;
+
+	top: 0;
+
+    z-index: 999;
 
 	width: 100%;
 	height: auto;
+	
+	background-color: rgba(var(--global-color-background-rgb), 0.85);
+	backdrop-filter: var(--global-backdrop-filter);
 
 	&.State-Open {
 
@@ -38,6 +45,21 @@ nav.GlobalNavigation {
 
 		}
 
+	}
+
+	&:before {
+		position: absolute;
+		display: block;
+		content: '';
+
+		bottom: 0;
+
+		width: 100%;
+		height: var(--global-size-border-width);
+
+		margin: 0 auto;
+
+		background-color: var(--global-color-border);
 	}
 
 	&:after {
@@ -188,7 +210,7 @@ nav.GlobalNavigation {
 
 			margin-left: var(--global-spacing-xs);
 
-			background-color: var(--global-color-background);
+			background-color: transparent;
 
 			border-radius: 0.25rem;
 
