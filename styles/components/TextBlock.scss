@@ -1,0 +1,27 @@
+div.TextBlocks {
+
+	p.TextBlock {
+
+		a {
+			text-decoration-line: underline;
+			text-decoration-thickness: var(--global-size-border-width);
+			text-decoration-style: solid;
+			text-decoration-color: var(--global-color-foreground);
+
+			background-clip: text;
+			text-fill-color: transparent;
+			-webkit-background-clip: text; // webkit-specific
+			-webkit-text-fill-color: transparent; // webkit-specific
+			-webkit-box-decoration-break: clone;
+
+			background-color: var(--global-color-foreground);
+
+			&:active {
+				text-decoration-color: transparent;
+				background-image: linear-gradient(to right, var(--global-color-gradient));
+			}
+		}
+
+	}
+
+}
