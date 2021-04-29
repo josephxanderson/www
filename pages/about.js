@@ -24,20 +24,7 @@ const About = () => {
 				</p>
 
 				<p className="TextBlock">
-					Follow me on&nbsp;
-
-					<Link href="https://github.com/josephxanderson" passHref>
-						<a target="_blank" >
-							GitHub
-						</a>
-					</Link>&nbsp;and&nbsp;
-
-					<Link href="https://twitter.com/josephxanderson" passHref>
-						<a target="_blank" >
-							Twitter
-						</a>
-					</Link>
-					&nbsp;@josephxanderson.
+					Contact me by emailing me@josephanderson.world, or reach out to me on <Link href="https://github.com/josephxanderson" passHref><a target="_blank" >GitHub</a></Link> ↗ and <Link href="https://twitter.com/josephxanderson" passHref><a target="_blank">Twitter</a></Link> ↗ @josephxanderson.
 				</p>
 			</div>
 		</Layout>
