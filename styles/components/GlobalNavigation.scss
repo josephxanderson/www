@@ -310,11 +310,11 @@ nav.GlobalNavigation {
 
 				background-color: transparent;
 
-				&:active {
-					background-color: rgba(var(--global-color-background-selected-rgb), 0.85);
+				&:after {
+					background-color: rgba(var(--global-color-background-secondary-rgb), 0.85);
 				}
 
-				&:after {
+				&:active {
 					background-color: rgba(var(--global-color-background-selected-rgb), 0.85);
 				}
 

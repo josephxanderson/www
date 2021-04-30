@@ -118,6 +118,9 @@ $global-breakpoint-xl: 1280px;
 	--global-color-background: var(--global-color-white);
 	--global-color-background-rgb: var(--global-color-white-rgb);
 
+	--global-color-background-secondary: var(--global-color-grey-200);
+	--global-color-background-secondary-rgb: var(--global-color-grey-200-rgb);
+
 	--global-color-background-selected: var(--global-color-grey);
 	--global-color-background-selected-rgb: var(--global-color-grey-rgb);
 
@@ -135,8 +138,11 @@ $global-breakpoint-xl: 1280px;
 	--global-color-background: var(--global-color-black);
 	--global-color-background-rgb: var(--global-color-black-rgb);
 
-	--global-color-background-selected: var(--global-color-grey-500);
-	--global-color-background-selected-rgb: var(--global-color-grey-500-rgb);
+	--global-color-background-secondary: var(--global-color-grey-500);
+	--global-color-background-secondary-rgb: var(--global-color-grey-500-rgb);
+
+	--global-color-background-selected: var(--global-color-grey-400);
+	--global-color-background-selected-rgb: var(--global-color-grey-400-rgb);
 
 	--global-color-foreground: var(--global-color-white);
 	--global-color-foreground-rgb: var(--global-color-white-rgb);
