@@ -37,7 +37,7 @@ nav.GlobalNavigation {
 
 		    top: var(--global-spacing-md);
 
-			background-color: var(--global-color-background-selected);
+			background-color: rgba(var(--global-color-background-selected-rgb), 0.85);
 
 			&:after {
 				background: linear-gradient(to right, var(--global-color-cyan), var(--global-color-green));
@@ -140,7 +140,7 @@ nav.GlobalNavigation {
 		}
 
 		&:active {
-			background-color: var(--global-color-background-selected);
+			background-color: rgba(var(--global-color-background-selected-rgb), 0.85);
 
 			&:after {
 				// First part of the gradient.
@@ -240,7 +240,7 @@ nav.GlobalNavigation {
 
 			&:active,
 			&.State-Active {
-				background-color: var(--global-color-background-selected);
+				background-color: rgba(var(--global-color-background-selected-rgb), 0.85);
 			}
 
 			&:nth-of-type(1) {
@@ -308,14 +308,14 @@ nav.GlobalNavigation {
 				margin-top: var(--global-spacing-xs);
 				margin-left: 0;
 
-				background-color: var(--global-color-background-selected);
+				background-color: transparent;
 
 				&:active {
-					background-color: var(--global-color-background-selected);
+					background-color: rgba(var(--global-color-background-selected-rgb), 0.85);
 				}
 
 				&:after {
-					background: var(--global-color-background-selected);
+					background-color: rgba(var(--global-color-background-selected-rgb), 0.85);
 				}
 
 				&:first-of-type {
@@ -368,7 +368,7 @@ nav.GlobalNavigation {
 		}
 
 		&:active {
-			background-color: var(--global-color-background-selected);
+			background-color: rgba(var(--global-color-background-selected-rgb), 0.85);
 
 			&:after {
 				background: linear-gradient(to right, var(--global-color-cyan), var(--global-color-green));
