@@ -7,7 +7,7 @@ import PageHeader from '../components/PageHeader';
 
 const Home = () => {
 	return (
-		<Layout>
+		<Layout title="josephanderson.world 🌎">
 			<PageHeader 
 				heading="👋🏼 I’m Joseph, a New Jersey-based software developer and creative."
 				subheading="I design and develop full-stack apps for web and mobile."

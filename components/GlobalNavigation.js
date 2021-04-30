@@ -1,8 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const GlobalNavigation = () => {
+	const router = useRouter();
 	const [menuOpen, setMenuOpen] = useState(false);
+	let root = null;
+	let headerElement = null;
+	let resizeObserver = null;
+	let findHeaderElement = null;
 
 	const closeMenu = () => {
 		setMenuOpen(false);
@@ -33,8 +39,21 @@ const GlobalNavigation = () => {
 		}
 	});
 
+	useLayoutEffect(() => {
+		root = document.documentElement;
+		headerElement = document.getElementsByClassName('GlobalNavigation')[0];
+
+		if (headerElement) {
+			resizeObserver = new ResizeObserver(getHeaderHeight).observe(headerElement);
+		}
+	}, []);
+
+	const getHeaderHeight = () => {
+		root.style.setProperty('--component-globalnavigation-height', headerElement.offsetHeight + 'px');
+	}
+
 	return (
-		<nav className={`GlobalNavigation ${menuOpen ? 'State-Open' : 'State-Closed'}`}>
+		<nav className={`GlobalNavigation ${menuOpen ? 'State-Open' : ''}`}>
 			<div className="GlobalNavigation-Container">
 				<div className="GlobalNavigation-Title" onClick={closeMenu}>
 					<Link href="/" passHref><a /></Link>
@@ -42,23 +61,23 @@ const GlobalNavigation = () => {
 				</div>
 
 				<ul className="GlobalNavigation-List" onClick={closeMenu}>
-					<li className="GlobalNavigation-List-Item">
+					<li className={`GlobalNavigation-List-Item ${ router.pathname.startsWith('/about') ? 'State-Active' : '' }`}>
 						<Link className="GlobalNavigation-List-Item-Link" href="/about" passHref><a /></Link>
 						<h5 className="GlobalNavigation-Item-Content">About</h5>
 					</li>
 
-					<li className="GlobalNavigation-List-Item">
+					<li className={`GlobalNavigation-List-Item ${ router.pathname.startsWith('/projects') ? 'State-Active' : '' }`}>
 						<Link className="GlobalNavigation-List-Item-Link" href="/projects" passHref><a /></Link>
 						<h5 className="GlobalNavigation-Item-Content">Projects</h5>
 					</li>
 
-					<li className="GlobalNavigation-List-Item">
+					<li className={`GlobalNavigation-List-Item ${ router.pathname.startsWith('/journal') ? 'State-Active' : '' }`}>
 						<Link className="GlobalNavigation-List-Item-Link" href="/journal" passHref><a /></Link>
 						<h5 className="GlobalNavigation-Item-Content">Journal</h5>
 					</li>
 
 					<li className="GlobalNavigation-List-Item">
-						<Link className="GlobalNavigation-List-Item-Link" href="https://github.com/josephxanderson" passHref><a /></Link>
+						<Link className="GlobalNavigation-List-Item-Link" href="https://github.com/josephxanderson" passHref><a target="_blank" /></Link>
 						<h5 className="GlobalNavigation-Item-Content">GitHub ↗</h5>
 					</li>
 				</ul>

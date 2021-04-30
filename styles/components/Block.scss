@@ -1,3 +1,5 @@
+@use '../variables';
+
 div.Block {
 	position: relative;
     display: flex;
@@ -9,10 +11,7 @@ div.Block {
 	width: auto;
 	height: auto;
 
-	padding-top: var(--global-spacing-xs);
-	padding-right: var(--global-spacing-xs);
-	padding-bottom: var(--global-spacing-xs);
-	padding-left: var(--global-spacing-xs);
+	overflow: hidden;
 
 	background-color: var(--global-color-background);
 
@@ -24,31 +23,67 @@ div.Block {
 	border-style: solid;
 	border-color: var(--global-color-border);
 
+	@media (max-width: variables.$global-breakpoint-md) {
+	    flex-direction: column-reverse;
+	}
+
 	div.Block-Image {
 		position: relative;
 		display: block;
-		
+
 		z-index: 1;
 
 		width: 50%;
-		height: 30rem;
+		height: auto;
+		
+		min-height: 30rem;
 
-    	figure.Block-Image {
-			position: relative;
-			display: block;
-
+		@media (max-width: variables.$global-breakpoint-md) {
 		    width: 100%;
-		    height: 100%;
+		}
+	}
 
-		    margin: 0;
-		    padding: 0;
+	div.Block-Content {
+		position: relative;
+		display: block;
 
-		    border: 0;
+		width: 50%;
+		height: 100%;
 
-		    background-size: cover;
-		    background-position: 50%;
-		    background-repeat: no-repeat;	
-    	}	
+		padding-top: var(--global-spacing-md);
+		padding-right: var(--global-spacing-md);
+		padding-bottom: var(--global-spacing-md);
+		padding-left: var(--global-spacing-md);
+
+		@media (max-width: variables.$global-breakpoint-md) {
+		    width: 100%;
+
+			padding-top: var(--global-spacing-sm);
+			padding-right: var(--global-spacing-sm);
+			padding-bottom: var(--global-spacing-sm);
+			padding-left: var(--global-spacing-sm);
+		}
+
+		div.Block-Header {
+			margin-bottom: 0.80rem;
+
+			.Block-Header-Heading {
+				margin-bottom: 0.80rem;
+			}
+
+			.Block-Header-Subheading {
+
+			}
+
+		}
+
+		div.Block-Description {
+
+			p.Block-Description-Content {
+				// line-height: 120%;
+			}
+
+		}
 
 	}
 

@@ -5,31 +5,9 @@ import Head from 'next/head';
 const Common = ({ title, description }) => {
 	const defaultTitle = 'Joseph Anderson';
 	const defaultDescription = 'Joseph Anderson is a New Jersey-based software developer and designer.';
-	
-	let root = null;
-	let headerElement = null;
-	let resizeObserver = null;
-	let findHeaderElement = null;
-
-	useLayoutEffect(() => {
-		root = document.documentElement;
-		headerElement = document.getElementsByClassName('GlobalNavigation')[0];
-
-		if (headerElement) {
-			resizeObserver = new ResizeObserver(getHeaderHeight).observe(headerElement);
-		}
-	}, []);
-
-	const getHeaderHeight = () => {
-		root.style.setProperty('--component-globalnavigation-height', headerElement.offsetHeight + 'px');
-	}
 
 	return (<>
 		<Head>
-			{/* HTML Info */}
-			<meta charSet="utf-8" />
-			<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-
 			{/* Meta */}
 			<title>{title ? title : defaultTitle}</title>
 			<meta name="author" content="Joseph Anderson" />
@@ -40,10 +18,6 @@ const Common = ({ title, description }) => {
 			<meta property="og:description" content={description ? description : defaultDescription} />
 			<meta property="og:type" content="website" />
 			<meta property="og:url" content={typeof window !== 'undefined' && window.location.hostname ? window.location.hostname : ''} />
-			<meta property="og:image" content="/images/global/favicon.png" />
-
-			<link rel="icon" href="/images/global/favicon.png" />
-			<link rel="apple-touch-icon" href="/images/global/apple-touch-icon.png" />
 		</Head>
 	</>);
 }

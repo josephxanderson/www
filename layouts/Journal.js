@@ -1,9 +1,9 @@
 // Framework imports
 import Common from './Common';
 
-const Journal = ({ children, title }) => {
+const Journal = ({ children, title, description }) => {
 	return (<>
-		<Common title={title} />
+		<Common title={title} description={description} />
 
 		<main className="PageContainer">
 			{ children }
