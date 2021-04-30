@@ -23,8 +23,43 @@ div.Block {
 	border-style: solid;
 	border-color: var(--global-color-border);
 
+	&:not(:last-of-type) {
+		margin-bottom: var(--global-spacing-md);
+	}
+
 	@media (max-width: variables.$global-breakpoint-md) {
 	    flex-direction: column-reverse;
+
+	    border-radius: 0;
+
+	    border-width: 0;
+
+		& + & {
+			padding-top: var(--global-spacing-md);
+		}
+
+	    &:not(:last-of-type) {
+	    	margin-bottom: 0;
+	    	
+			padding-bottom: var(--global-spacing-md);
+
+			&:before {
+				position: absolute;
+				display: block;
+				content: '';
+
+				bottom: 0;
+
+				width: 100%;
+				height: var(--global-size-border-width);
+
+				margin: 0 auto;
+
+				background-color: var(--global-color-border);
+			}
+
+	    }
+
 	}
 
 	div.Block-Image {
@@ -58,10 +93,10 @@ div.Block {
 		@media (max-width: variables.$global-breakpoint-md) {
 		    width: 100%;
 
-			padding-top: var(--global-spacing-sm);
-			padding-right: var(--global-spacing-sm);
-			padding-bottom: var(--global-spacing-sm);
-			padding-left: var(--global-spacing-sm);
+			padding-top: 0;
+			padding-right: var(--global-spacing-xs);
+			padding-bottom: var(--global-spacing-md);
+			padding-left: var(--global-spacing-xs);
 		}
 
 		div.Block-Header {

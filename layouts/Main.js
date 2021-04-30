@@ -5,7 +5,7 @@ const Main = ({ children, title, description }) => {
 	return (<>
 		<Common title={title} description={description} />
 
-		<main className="PageContainer">
+		<main className="Page">
 			{ children }
 		</main>
 	</>);
