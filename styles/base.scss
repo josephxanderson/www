@@ -1,0 +1,119 @@
+@use './variables';
+
+* {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0.0);
+}
+
+html {
+	position: relative;
+	display: block;
+
+	background: var(--global-color-background);
+
+	font-size: 100%;
+} // html
+
+body {
+	position: relative;
+	display: block;
+
+	direction: ltr;
+	text-align: left;
+
+	background: var(--global-color-background);
+	
+	color: var(--global-color-foreground);
+	font-size: var(--global-text-size-sm);
+	text-size-adjust: 100%; // Prevent font scaling in landscape.
+
+	div#__next {
+		position: relative;
+		display: block;
+
+		width: 100%;
+		height: 100%;
+
+	    min-height: calc(100vh - var(--component-globalnavigation-height));
+
+		&:after {
+			content: '';
+			position: absolute;
+
+			bottom: 0;
+
+			width: 100%;
+			height: calc(var(--global-size-border-width) * 2);
+
+			background: linear-gradient(to right, var(--global-color-gradient));
+		}
+
+		main.Page {
+			position: relative;
+			display: flex;
+
+			flex-direction: column;
+
+			width: 100%;
+			height: auto;
+
+			max-width: var(--global-breakpoint-md);
+
+			margin-top: var(--component-globalnavigation-height);
+			margin-right: auto;
+			margin-bottom: 0;
+			margin-left: auto;
+
+			padding-top: var(--global-spacing-md);
+			padding-bottom: var(--global-spacing-md);
+				
+				padding-left: var(--global-spacing-sm);
+				padding-right: var(--global-spacing-sm);
+
+			// @media (max-width: variables.$global-breakpoint-md) {
+				
+			// } // @media
+
+			// div.PageContainer {
+			// 	position: relative;
+			// 	display: block;
+
+			// 	padding-left: var(--global-spacing-sm);
+			// 	padding-right: var(--global-spacing-sm);
+			// }
+
+			header.PageHeader {
+				position: relative;
+				display: block;
+				   
+				margin-bottom: var(--global-spacing-md);
+			
+				padding-top: 0;
+				padding-right: var(--global-spacing-xs);
+				padding-bottom: 0;
+				padding-left: var(--global-spacing-xs);
+
+				.PageHeader-Heading {
+				    position: relative;
+				    display: block;
+
+				    margin-bottom: var(--global-spacing-md);
+				    padding-bottom: 0.14em; // prevent descenders from getting cut off.
+				}
+
+				.PageHeader-Subheading {
+				}
+
+				.PageHeader-Heading,
+				.PageHeader-Subheading {
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+
+			}
+
+		} // main.PageContainer
+
+	} // div#__next
+
+} // body

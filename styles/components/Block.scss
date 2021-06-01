@@ -1,0 +1,129 @@
+@use '../variables';
+
+div.Block {
+	position: relative;
+    display: flex;
+
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+
+	width: auto;
+	height: auto;
+
+	overflow: hidden;
+
+	background-color: var(--global-color-background);
+
+	border-radius: 0.25rem;
+
+	background-clip: padding-box;
+
+	border-width: var(--global-size-border-width);
+	border-style: solid;
+	border-color: var(--global-color-border);
+
+	&:not(:last-of-type) {
+		margin-bottom: var(--global-spacing-md);
+	}
+
+	@media (max-width: variables.$global-breakpoint-md) {
+	    flex-direction: column-reverse;
+
+	    border-radius: 0;
+
+	    border-width: 0;
+
+		& + & {
+			padding-top: var(--global-spacing-md);
+		}
+
+	    &:not(:last-of-type) {
+	    	margin-bottom: 0;
+
+			padding-bottom: var(--global-spacing-md);
+
+			&:before {
+				position: absolute;
+				display: block;
+				content: '';
+
+				bottom: 0;
+
+				width: 100%;
+				height: var(--global-size-border-width);
+
+				margin: 0 auto;
+
+				background-color: var(--global-color-border);
+			}
+
+	    }
+
+	}
+
+	div.Block-Image {
+		position: relative;
+		display: block;
+
+		z-index: 1;
+
+		width: 50%;
+		height: auto;
+		
+		min-height: 30rem;
+
+		overflow: hidden;
+
+		@media (max-width: variables.$global-breakpoint-md) {
+		    width: 100%;
+
+			border-radius: 0.25rem;
+		}
+	}
+
+	div.Block-Content {
+		position: relative;
+		display: block;
+
+		width: 50%;
+		height: 100%;
+
+		padding-top: var(--global-spacing-md);
+		padding-right: var(--global-spacing-md);
+		padding-bottom: var(--global-spacing-md);
+		padding-left: var(--global-spacing-md);
+
+		@media (max-width: variables.$global-breakpoint-md) {
+		    width: 100%;
+
+			padding-top: 0;
+			padding-right: var(--global-spacing-xs);
+			padding-bottom: var(--global-spacing-md);
+			padding-left: var(--global-spacing-xs);
+		}
+
+		div.Block-Header {
+			margin-bottom: 0.80rem;
+
+			.Block-Header-Heading {
+				margin-bottom: 0.80rem;
+			}
+
+			.Block-Header-Subheading {
+
+			}
+
+		}
+
+		div.Block-Description {
+
+			p.Block-Description-Content {
+				// line-height: 120%;
+			}
+
+		}
+
+	}
+
+}

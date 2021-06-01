@@ -1,0 +1,393 @@
+@use '../variables';
+
+// Variables
+:root {
+	--component-globalnavigation-height: 0rem; // for JS
+}
+
+nav.GlobalNavigation {
+	position: fixed;
+	display: block;
+
+	top: 0;
+
+    z-index: 999;
+
+	width: 100%;
+	height: auto;
+	
+	background-color: rgba(var(--global-color-background-rgb), 0.85);
+	backdrop-filter: var(--global-backdrop-filter);
+
+	&.State-Open {
+
+		div.GlobalNavigation-Container {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		ul.GlobalNavigation-List {
+			display: flex;
+		}
+
+		.GlobalNavigation-CommandButton {
+			align-self: flex-end;
+		    position: absolute;
+		    justify-self: flex-end;
+
+		    top: var(--global-spacing-md);
+
+			background-color: rgba(var(--global-color-background-selected-rgb), 0.85);
+
+			&:after {
+				background: linear-gradient(to right, var(--global-color-cyan), var(--global-color-green));
+			}
+
+		}
+
+	}
+
+	&:before {
+		position: absolute;
+		display: block;
+		content: '';
+
+		bottom: 0;
+
+		width: 100%;
+		height: var(--global-size-border-width);
+
+		margin: 0 auto;
+
+		background-color: var(--global-color-border);
+	}
+
+	&:after {
+	    position: absolute;
+	    display: block;
+		content: "";
+
+	    bottom: 0;
+
+	    width: 100%;
+	    height: 0.10rem;
+
+	    background: transparent;
+	}
+
+	div.GlobalNavigation-Container {
+		position: relative;
+		display: flex;
+
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+
+		width: 100%;
+		height: auto;
+
+		max-width: var(--global-breakpoint-md);
+
+		margin: 0 auto;
+
+		padding-top: var(--global-spacing-md);
+		padding-right: var(--global-spacing-sm);
+		padding-bottom: var(--global-spacing-md);
+		padding-left: var(--global-spacing-sm);
+	}
+
+	div.GlobalNavigation-Title {
+		position: relative;
+		display: flex;
+
+		align-items: center;
+		justify-content: center;
+
+		width: auto;
+		height: 2.6rem;
+
+		padding-top: var(--global-spacing-xs);
+		padding-left: var(--global-spacing-xs);
+		padding-bottom: var(--global-spacing-xs);
+		padding-right: var(--global-spacing-xs);
+
+		margin-bottom: 0;
+
+		background-color: transparent;
+
+		border-radius: 0.25rem;
+
+		user-select: none;
+
+		background-clip: padding-box;
+
+		border-width: var(--global-size-border-width);
+		border-style: solid;
+		border-color: transparent;
+
+		&:after {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: -0.175rem;
+			border-radius: inherit;
+
+			background: transparent;
+		}
+
+		&:active {
+			background-color: rgba(var(--global-color-background-selected-rgb), 0.85);
+
+			&:after {
+				// First part of the gradient.
+				background: linear-gradient(to right, var(--global-color-yellow), var(--global-color-orange), var(--global-color-red));
+			}
+		}
+
+		@media (max-width: variables.$global-breakpoint-md) {
+			&:active {
+				&:after {
+					// More gradient for mobile, since we'll be the largest element.
+					background: linear-gradient(to right, var(--global-color-yellow), var(--global-color-orange), var(--global-color-red), var(--global-color-purple), var(--global-color-blue), var(--global-color-cyan));
+				}
+			}
+		}
+
+		a {
+			position: absolute;
+			display: block;
+
+			z-index: 1;
+
+			top: 0;
+			left: 0;
+
+			width: 100%;
+			height: 100%;
+		}
+
+		.GlobalNavigation-Title-Content {
+			// ...
+		}
+		
+	}
+
+	ul.GlobalNavigation-List {
+		position: relative;
+		display: flex;
+
+		flex-direction: row;
+		align-items: center;
+		justify-content: normal;
+
+		list-style: none;
+
+		@media (max-width: variables.$global-breakpoint-md) {
+			display: none;
+
+			flex-direction: column;
+
+			width: 100%;
+
+			margin-top: var(--global-spacing-xs);
+		} // @media
+
+		li.GlobalNavigation-List-Item {
+			position: relative;
+			display: block;
+
+			width: auto;
+			height: auto;
+
+			padding-top: var(--global-spacing-xs);
+			padding-right: var(--global-spacing-xs);
+			padding-bottom: var(--global-spacing-xs);
+			padding-left: var(--global-spacing-xs);
+
+			margin-left: var(--global-spacing-xs);
+
+			background-color: transparent;
+
+			border-radius: 0.25rem;
+
+		    background-clip: padding-box;
+
+			border-width: var(--global-size-border-width);
+			border-style: solid;
+			border-color: transparent;
+
+			&:after {
+				content: '';
+				position: absolute;
+				z-index: -1;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				margin: -0.175rem;
+				border-radius: inherit;
+
+				background: transparent;
+			}
+
+			&.State-Active {
+				pointer-events: none;
+			}
+
+			&:active,
+			&.State-Active {
+				background-color: rgba(var(--global-color-background-selected-rgb), 0.85);
+			}
+
+			&:nth-of-type(1) {
+				&:active,
+				&.State-Active {
+					&:after {
+						background: linear-gradient(to right, var(--global-color-red), var(--global-color-purple));
+					}
+				}
+			}
+
+			&:nth-of-type(2) {
+				&:active,
+				&.State-Active {
+					&:after {
+						background: linear-gradient(to right, var(--global-color-purple), var(--global-color-blue));
+					}
+				}
+			}
+
+			&:nth-of-type(3) {
+				&:active,
+				&.State-Active {
+					&:after {
+						background: linear-gradient(to right, var(--global-color-blue), var(--global-color-cyan));
+					}
+				}
+			}
+
+			&:nth-of-type(4) {
+				&:active,
+				&.State-Active {
+					&:after {
+						background: linear-gradient(to right, var(--global-color-cyan), var(--global-color-green));
+					}
+				}
+			}
+
+			a {
+				position: absolute;
+				display: block;
+
+				z-index: 1;
+
+				top: 0;
+				left: 0;
+
+				width: 100%;
+				height: 100%;
+			}
+
+			&:first-of-type {
+				margin-left: 0;
+			} // :last-of-type
+
+			@media (max-width: variables.$global-breakpoint-md) {
+				width: 100%;
+				height: auto;
+
+				padding-top: var(--global-spacing-xs);
+				padding-left: var(--global-spacing-xs);
+				padding-bottom: var(--global-spacing-xs);
+				padding-right: var(--global-spacing-xs);
+
+				margin-top: var(--global-spacing-xs);
+				margin-left: 0;
+
+				background-color: transparent;
+
+				&:after {
+					background-color: rgba(var(--global-color-background-secondary-rgb), 0.85);
+				}
+
+				&:active {
+					background-color: rgba(var(--global-color-background-selected-rgb), 0.85);
+				}
+
+				&:first-of-type {
+					margin-top: 0;
+				} // :first-of-type
+
+			} // @media
+
+		} // li.GlobalNavigation-List-Item
+	
+	} // ul.GlobalNavigation-List
+
+	div.GlobalNavigation-CommandButton {
+		position: relative;
+		display: none;
+
+		align-items: center;
+		justify-content: center;
+
+		width: 2.6rem;
+		height: 2.6rem;
+
+		padding-top: var(--global-spacing-xs);
+		padding-left: var(--global-spacing-xs);
+		padding-bottom: var(--global-spacing-xs);
+		padding-right: var(--global-spacing-xs);
+
+		background-color: transparent;
+
+		border-radius: 0.25rem;
+
+		cursor: pointer;
+		user-select: none;
+
+		background-clip: padding-box;
+		border: 0.175rem solid transparent;
+
+		&:after {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: -0.175rem;
+			border-radius: inherit;
+
+			background: transparent;
+		}
+
+		&:active {
+			background-color: rgba(var(--global-color-background-selected-rgb), 0.85);
+
+			&:after {
+				background: linear-gradient(to right, var(--global-color-cyan), var(--global-color-green));
+			}
+		}
+
+		@media (max-width: variables.$global-breakpoint-md) {
+			display: flex;
+		} // @media
+
+		.GlobalNavigation-CommandButton-Content {
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			text-fill-color: transparent;
+
+			background-image: linear-gradient(to bottom right, var(--global-color-gradient));
+			
+		} // .GlobalNavigation-CommandButton-Content
+
+	} // div.GlobalNavigation-CommandButton
+
+} // nav.GlobalNavigation
